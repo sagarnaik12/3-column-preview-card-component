@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+// font-family: 'Big Shoulders Display', cursive;
+// font-family: 'Lexend Deca', sans-serif;
+
+:root {
+  font-size: 15px;
+}
+
+// Colors
+$orange: hsl(31, 77%, 52%);
+$d-cyan: hsl(184, 100%, 22%);
+$vd-cyan: hsl(179, 100%, 13%);
+$t-white: hsla(0, 0%, 100%, 0.75);
+$l-gray: hsl(0, 0%, 95%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $l-gray;
+  gap: 1em;
+}
+
+.wrapper {
+  display: flex;
+  border-radius: 10px;
+  max-width: 920px;
+  height: 500px;
+  overflow: hidden;
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3em 2em 3em 3em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: $t-white;
+      opacity: 0.1;
+      border-radius: 50%;
+      z-index: -1;
+      right: -50%;
+      bottom: -50%;
+    }
+
+    &:hover::before {
+      transform: scale(10);
+      transition: 0.5s ease-in;
+    }
+
+    .title {
+      font-size: 2.25em;
+      font-family: "Big Shoulders Display", cursive;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $l-gray;
+    }
+
+    .content {
+      font-size: 1em;
+      letter-spacing: 2px;
+      font-family: "Big Shoulders Display", cursive;
+      font-weight: 700;
+      color: $t-white;
+    }
+
+    .btn {
+      font-size: 0.8em;
+      padding: 1em 2em;
+      border-radius: 20px;
+      width: fit-content;
+      border: 2px solid $l-gray;
+      color: $l-gray;
+      cursor: pointer;
+      font-weight: 400;
+      font-family: "Lexend Deca", sans-serif;
+      margin-top: auto;
+    }
+  }
+}
+
+.orange {
+  background-color: $orange;
+}
+
+.d-cyan {
+  background-color: $d-cyan;
+}
+
+.v-d-cyan {
+  background-color: $vd-cyan;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
